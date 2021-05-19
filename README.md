@@ -30,6 +30,14 @@ if (false == "") {
 ```
 ### Por que isso ocorre?
 - Pelas definições do ECMA (https://262.ecma-international.org/11.0/#sec-toboolean e https://262.ecma-international.org/11.0/#sec-abstract-equality-comparison), se o argumento for uma string vazia retorna **false**, senão **true**.
+```javascript
+//console.clear();
+var a = '';
+console.log("A variável 'a' é nula: " + (null == a));
+console.log("A variável 'a' é indefinida: " + (undefined == a));
+console.log("A variável 'a' é vazia: " + ('' == a));
+console.log("O valor 'numérico' da variável 'a' é: " + (+a));
+```
 ## 3. Verificação de um array vazio.
 ```javascript
 //console.clear();
