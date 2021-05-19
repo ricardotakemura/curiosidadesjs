@@ -189,4 +189,4 @@ var fruta = 'b' + 'a' + + 'b' + 'a';
 console.log(fruta);
 ```
 ### Por que isso ocorre?
-- Por causa da seguinte operação: **+"b"**. Isso faz com que o valor **'b'** seja transformado em um número, como não é um valor numérico válido, esta operação retorna **NaN**.
+- Por causa da seguinte operação: **+'b'**. Isso faz com que o valor **'b'** seja transformado em um número, como não é um valor numérico válido, esta operação retorna **NaN**.
