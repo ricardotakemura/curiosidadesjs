@@ -182,7 +182,7 @@ console.log(a.toString());
 ```
 ### Por que isso ocorre?
 - Ao explicitar o método **toString** de um **number**, é exibido o valor do retorno da função reescrita.
-## 15. Concatenação de strings 'b' e 'a' retorna 'BaNaNa'.
+## 15. Concatenação de strings 'b' e 'a' retorna 'baNaNa'.
 ```javascript
 //console.clear();
 var fruta = 'b' + 'a' + + 'b' + 'a';
