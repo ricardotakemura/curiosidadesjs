@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                font: 18px bold Arial, Helvetica, sans-serif;
+            }
+            h1 {
+                background: #fff;
+                border-bottom: 1px solid #000;
+            }
+            .half {
+                margin: 4px 0.5%;
+                width: 48%;
+                height: 500px;
+                float: left;
+            }
+            #left {
+                background: #000;
+                color: #00ff00;
+                padding: 0.5%;
+            }
+            #right textarea {
+                width: 100%;
+                height: 500px;
+                background: #000;
+                color: #00ff00;
+                padding: 0.5%;
+            }
+            button {
+                height: 40px;
+                width: 200px;
+                background: #000;
+                color: #00ff00;
+                float: right;
+                margin: 10px;
+            }
+        </style>
+        <script type="text/javascript">
+            var console = {
+                log: function(message) {
+                    document.getElementById("output").innerHTML += "<p>" + message + "</p>";
+                },
+                clear: function() {
+                    document.getElementById("output").innerHTML = "";
+                }
+            }
+            function execute() {
+                var commands = document.getElementById("commands").value;
+                try {
+                    eval(commands);
+                } catch (e) {
+                    console.log(e);
+                }
+            }
+        </script>
+        <title>Javascript</title>
+    </head>
+    <body>
+        <h1><img src="./img/sensedia.png" alt="Sensedia"></img><button onclick="execute();">RUN!</button></h1>
+        <div class="half" id="left">
+            <div id="output"></div>
+        </div>
+        <div class="half" id="right">
+            <textarea id="commands"></textarea>            
+        </div>
+    </body>
+</html>

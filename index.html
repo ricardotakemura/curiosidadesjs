@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <title>Javacript</title>
+        <script type="text/javascript">
+        var continued = false;
+        var commands = '';
+        console.log = function(message) {
+            document.getElementById('divOutput').innerHTML += '<p>' + message + '</p>';
+        };
+        console.clear = function() {
+            commands = '';
+            document.getElementById('divOutput').innerHTML = '';
+        }
+        function txtCommand_onKeyDown(e) {
+            if (e.keyCode == 13) {
+                var command = document.getElementById('txtCommand').value;
+                if (command) {
+                    console.log((continued ? '>&nbsp;' : '[javascript@localhost]:&nbsp;') + command);
+                    if (command.endsWith('\\')) {                        
+                        commands += command.substring(0, command.length - 1) + '\n';
+                        continued = true;
+                    } else {
+                        commands += command + '\n';
+                        try {
+                            eval(commands);
+                        } catch (e) {
+                            console.log('Error: ' + e);
+                        }
+                        commands = '';
+                        continued = false;
+                    }
+                }
+                document.getElementById('spnPrompt').innerHTML = continued ? '>&nbsp;' : '[javascript@localhost]:&nbsp;';
+                document.getElementById('txtCommand').value = '';
+                document.getElementById('txtCommand').focus();
+            }
+        }
+        window.onload = function() {
+            document.getElementById('txtCommand').focus();
+        }
+        </script>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                background: #000;
+                font: 18px monospace;
+            }
+            #divOutput {
+                color: #00ff00;
+                width: 100%;
+                float: left;
+                padding: 8px 0 0 0;
+            }
+            p {
+                height: 23px;
+                color: #00ff00;
+            }
+            #txtCommand {
+                color: #00ff00;
+                border: 1px solid #000;
+                width: 75%;
+                outline: none;
+                height: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="divOutput" class="middle">
+        </div>
+        <p><span id="spnPrompt">[javascript@localhost]:&nbsp;</span><input id="txtCommand" name="txtCommand" type="text" onkeydown="txtCommand_onKeyDown(event);"></input></p>
+    </body>
+</html>
