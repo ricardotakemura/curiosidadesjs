@@ -3,7 +3,6 @@
 ```javascript
 //console.clear();
 var a = 0/0;
-console.log("a = " + a);
 console.log(a == a);
 ```
 ### Por que isso ocorre?
