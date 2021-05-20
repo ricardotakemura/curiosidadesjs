@@ -156,7 +156,7 @@ console.log(b);
 console.log(10.toString());
 ```
 ### Por que isso ocorre?
-- Para o interpretador, o ponto (.) pode representar valores decimais em um número literal, e por isso ocorre o erro.
+- Para o interpretador, o ponto (.) pode representar valores decimais em um número literal e por isso ocorre o erro.
 ## 12. Usando prototype para reescrever um método.
 ```javascript
 //console.clear();
