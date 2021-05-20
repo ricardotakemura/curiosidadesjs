@@ -49,8 +49,8 @@ if (false == []) {
 }
 ```
 ### Por que isso ocorre?
-- Pelas definições do ECMA (https://262.ecma-international.org/11.0/#sec-toboolean e https://262.ecma-international.org/11.0/#sec-abstract-equality-comparison), se o argumento for um objeto, sempre retornará **true**.
-- Talvez por causa que o primeiro **if** verifica se o objeto esta preenchido (se ele é diferente de **null** e **undefined**) e o segundo transforma o objeto é um valor "numérico". Exemplo:
+- Pelas definições do ECMA (https://262.ecma-international.org/11.0/#sec-toboolean e https://262.ecma-international.org/11.0/#sec-abstract-equality-comparison), se o argumento for um objeto "instanciado", sempre retornará **true**.
+- Talvez por causa que o primeiro **if** verifica se o objeto esta preenchido (se ele é diferente de **null** e **undefined**) e o segundo transforma o objeto em um valor "numérico". Exemplo:
 ```javascript
 //console.clear();
 var a = [];
@@ -85,7 +85,7 @@ console.log("O valor 'numérico' da variável 'a' é: " + (+a));
 console.log([] == ![]);
 ```
 ### Por que isso ocorre?
-- Pelas definições do ECMA (https://262.ecma-international.org/11.0/#sec-toboolean e https://262.ecma-international.org/11.0/#sec-abstract-equality-comparison), se o argumento for um objeto, sempre retornará **true**.
+- Pelas definições do ECMA (https://262.ecma-international.org/11.0/#sec-toboolean e https://262.ecma-international.org/11.0/#sec-abstract-equality-comparison), se o argumento for um objeto "instanciado", sempre retornará **true**.
 - O mesmo motivo do item 3:
 ```javascript
 //console.clear();
