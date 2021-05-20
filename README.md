@@ -167,7 +167,7 @@ var a = new Object();
 console.log(a);
 ```
 ### Por que isso ocorre?
-- A propriedade **prototype** é especial. Ela pode adicionar ou reescrever de algumas funções de 'classes' pre-existentes, podendo ser usadas pelo objetos desta classe.
+- A propriedade **prototype** é especial. Ela pode adicionar ou reescrever algumas funções de 'classes' pre-existentes, podendo ser usadas pelo objetos desta classe.
 ## 13. prototype não funciona em números?
 ```javascript
 //console.clear();
@@ -189,7 +189,7 @@ var a = 1;
 console.log(a.toString());
 ```
 ### Por que isso ocorre?
-- Ao explicitar o método **toString** de um **number**, é exibido o valor do retorno da função reescrita.
+- Ao explicitar o método **toString** de um **number**, é exibido o valor do retorno da função.
 ## 15. Concatenação de strings 'b' e 'a' retorna 'baNaNa'.
 ```javascript
 //console.clear();
