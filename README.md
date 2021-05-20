@@ -6,7 +6,7 @@ var a = 0/0;
 console.log(a == a);
 ```
 ### Por que isso ocorre?
-- Pela definição do ECMA (https://262.ecma-international.org/11.0/#sec-abstract-equality-comparison) valores como **NaN**, **+&infin;** e **-&infin;** ao serem comparados devem retornar **false**.
+- Pela definição do ECMA (https://262.ecma-international.org/11.0/#sec-abstract-equality-comparison) valores como **NaN**, **+&infin;** e **-&infin;** ao serem comparados, devem retornar **false**.
 - Talvez, por **NaN** não ser um valor definido (qual é o valor de NaN?), não seja possível compará-lo. Por exemplo:
 ```javascript
 //console.clear();
@@ -50,7 +50,7 @@ if (false == []) {
 ```
 ### Por que isso ocorre?
 - Pelas definições do ECMA (https://262.ecma-international.org/11.0/#sec-toboolean e https://262.ecma-international.org/11.0/#sec-abstract-equality-comparison), se o argumento for um objeto "instanciado", sempre retornará **true**.
-- Talvez por causa que o primeiro **if** verifica se o objeto esta preenchido (se ele é diferente de **null** e **undefined**) e o segundo transforma o objeto em um valor "numérico". Exemplo:
+- Talvez, por causa que o primeiro **if** verifica se o objeto esta preenchido (se ele é diferente de **null** e **undefined**) e o segundo transforma o objeto em um valor "numérico". Exemplo:
 ```javascript
 //console.clear();
 var a = [];
@@ -140,7 +140,7 @@ var b = a++;
 console.log(b);
 ```
 ### Por que isso ocorre?
-- Ao fazer um operação matemática (ou seja, numérica), o interpretador tenta transformar o valor 'A' para um número (o que ele não é), por isso ele retorna **NaN** mesmo este valor não seja o incrementado.
+- Ao fazer um operação matemática (ou seja, numérica), o interpretador tenta transformar o valor 'A' para um número (o que ele não é), por isso ele retorna **NaN** mesmo que este valor não seja o incrementado.
 ## 10. Incremento de '0xA' retorna 10.
 ```javascript
 //console.clear();
@@ -156,7 +156,7 @@ console.log(b);
 console.log(10.toString());
 ```
 ### Por que isso ocorre?
-- Para o interpretador, o ponto pode representar valores decimais em um número literal, por isso ocorre o erro.
+- Para o interpretador, o ponto (.) pode representar valores decimais em um número literal, e por isso ocorre o erro.
 ## 12. Usando prototype para reescrever um método.
 ```javascript
 //console.clear();
@@ -197,4 +197,4 @@ var fruta = 'b' + 'a' + + 'b' + 'a';
 console.log(fruta);
 ```
 ### Por que isso ocorre?
-- Por causa da seguinte operação: **+'b'**. Isso faz com que o valor **'b'** seja transformado em um número, como não é um valor numérico válido, esta operação retorna **NaN**.
+- Por causa da seguinte operação: **+'b'**, isso faz com que o valor **'b'** seja transformado em um número, e como não é um valor numérico válido, esta operação retorna **NaN**.
